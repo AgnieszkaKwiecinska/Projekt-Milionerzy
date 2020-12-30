@@ -1,6 +1,6 @@
-package com.company.Questions;
+package milionerzy.Questions;
 
-import com.company.Log;
+import milionerzy.Log;
 
 public class Slang implements Questions{
     private int answer;
