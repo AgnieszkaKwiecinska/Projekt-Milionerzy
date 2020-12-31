@@ -1,4 +1,4 @@
-package com.company;
+package milionerzy;
 
 public class Log {
 

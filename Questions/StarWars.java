@@ -1,4 +1,4 @@
-package com.company.Questions;
+package milionerzy.Questions;
 
 public class StarWars implements Questions{
 }
