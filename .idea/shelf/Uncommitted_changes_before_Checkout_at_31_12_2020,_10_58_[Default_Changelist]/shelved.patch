@@ -1,0 +1,43 @@
+Index: src/com/company/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company;\n\n\nimport java.util.Scanner;\n\npublic class Game {\n    Scanner scanner = new Scanner(System.in);\n    private String username;\n    public void startGame() {\n        username();\n        Log.info(\"Hey \" + username + \"\\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\\n\" +\n                \"You may quit at any time and keep their earnings.\\n\" +\n                \"For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\\n\");\n    }\n\n    private void username() {\n        System.out.println(\"Enter username:   \");\n        username = scanner.nextLine();\n\n    }\n\n    public void endGame(){\n\n    }\n    public void giveUp(){\n\n    }\n    public void winning(){\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Game.java b/src/com/company/Game.java
+--- a/src/com/company/Game.java	(revision 8ac2177cf320cdf6cd4f326de7e447718a13efa5)
++++ b/src/com/company/Game.java	(date 1609345378662)
+@@ -6,6 +6,7 @@
+ public class Game {
+     Scanner scanner = new Scanner(System.in);
+     private String username;
++
+     public void startGame() {
+         username();
+         Log.info("Hey " + username + "\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
+@@ -14,18 +15,19 @@
+     }
+ 
+     private void username() {
+-        System.out.println("Enter username:   ");
++        System.out.println("Enter username: ");
+         username = scanner.nextLine();
+-
+     }
+ 
+-    public void endGame(){
++    public void endGame() {
+ 
+     }
+-    public void giveUp(){
++
++    public void giveUp() {
+ 
+     }
+-    public void winning(){
++
++    public void winning() {
+ 
+     }
+ }

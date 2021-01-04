@@ -1,0 +1,940 @@
+Index: src/com/company/Questions/StarWars.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Questions/StarWars.java b/Questions/StarWars.java
+rename from src/com/company/Questions/StarWars.java
+rename to Questions/StarWars.java
+--- a/src/com/company/Questions/StarWars.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ b/Questions/StarWars.java	(date 1609679112945)
+@@ -1,4 +1,53 @@
+-package com.company.Questions;
++package milionerzy.Questions;
++
++public class StarWars extends Questions {
++    private void question1() {
++        Log.info("Co mówi Leia po tym jak całuje Luke'a na Gwieździe Śmierci?\n");
++        Log.info("1) 'Ty wieśniaku'\n            2) 'Kocham cię'\n");
++        Log.info("3) 'Nie mów przemytnikowi'\n   4) 'Na szczęście'\n");
++    }
+ 
+-public class StarWars implements Questions{
++    public int answer1() {
++        return 4;
++    }
++
++    private void question2() {
++        Log.info("Jak nazywają się wojownicy ubierrający takie pancerze jak Boba Fett?\n");
++        Log.info("1) Sithowie\n           2) Mandalorianie\n");
++        Log.info("3) Yuuzhan Vongowie \n    4) Lasaci \n");
++    }
++
++    public int answer2() {
++        return 2;
++    }
++
++    private void question3() {
++        Log.info("Gdzie Anakin i Palpatine spotykają się po raz pierwszy?\n");
++        Log.info("1) Na Tatooine\n           2) Na Coruscant \n");
++        Log.info("3) Na Naboo \n    4) Nie spotykają się \n");
++    }
++
++    public int answer3() {
++        return 2;
++    }
++
++    private void question4() {
++        Log.info("Jak nazywa się obcy, który próbuje ukraść BB-8 na Jakku?\n");
++        Log.info("1) Teedo\n           2) Tusken \n");
++        Log.info("3) Jawa \n    4) Wookiee \n");
++    }
++
++    public int answer4() {
++        return 1;
++    }
++
++    private void question5() {
++        Log.info("Czego używa Darth Vader, by odnaleźć bazę rebeliantów?\n");
++        Log.info("1) Armii Imperium \n           2) Łowców nagród  \n");
++        Log.info("3) Droidów-sond  \n    4) Mocy \n");
++    }
++
++    public int answer5() {
++        return 3;
++    }
+ }
+Index: src/com/company/Questions/Slang.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Questions/Slang.java b/Questions/Slang.java
+rename from src/com/company/Questions/Slang.java
+rename to Questions/Slang.java
+--- a/src/com/company/Questions/Slang.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ b/Questions/Slang.java	(date 1609679112956)
+@@ -1,28 +1,58 @@
+-package com.company.Questions;
++package milionerzy.Questions;
+ 
+-import com.company.Log;
++import milionerzy.Log;
+ 
+-public class Slang implements Questions{
++public class Slang extends Questions {
+     private int answer;
+ 
+-    private void question1(){
+-        Log.info("What word won the competition in 2019?\n");
+-        Log.info("1) Jesieniara      2) Eluwina\n");
+-        Log.info("3) Dzban           4) Alternatywka\n");
++    private void question1() {
++        Log.info("Jakie słowo w 2019 roku wygrało w konkursie PWN?\n");
++        Log.info("1) Jesieniara\n  2) Eluwina\n");
++        Log.info("3) Dzban\n      4) Alternatywka\n");
+     }
+ 
+     public int answer1() {
+         return 4;
+     }
+ 
+-    private void question2(){
+-        Log.info("What does the word 'masny' mean?\n");
+-        Log.info("1) a stupid person\n2) Something really good\n");
+-        Log.info("3) a person who dresses specifically\n4) a rich person\n");
++    private void question2() {
++        Log.info("Co znaczy słowo 'masny'?\n");
++        Log.info("1) osoba głupia, robiąca coś głupiego \n2) coś bardzo dobrego, grubego \n");
++        Log.info("3) osoba ubierająca się specyficznie \n4) osoba bogata, próżna \n");
+     }
+ 
+     public int answer2() {
+         return 2;
+     }
+ 
++    private void question3() {
++        Log.info("Co znaczy słowo 'boomer'?\n");
++        Log.info("1) ironiczna nazwa osoby starszej \n2) śmieszna sytuacja  \n");
++        Log.info("3) impreze \n4) modny, ciekawy  \n");
++    }
++
++    public int answer3() {
++        return 1;
++    }
++
++    private void question4() {
++        Log.info("Co znaczy słowo 'sztywniutko'?\n");
++        Log.info("1) bez sensu \n2) zgodnie z planem  \n");
++        Log.info("3) za póżno \n4) coś sztywnego, nudnego  \n");
++    }
++
++    public int answer4() {
++        return 2;
++    }
++
++    private void question5() {
++        Log.info("Co znaczy słowo 'Ketchup po frytkach'?\n");
++        Log.info("1) samotne życie \n2) cenić coś \n");
++        Log.info("3) po sprawie \n4) działać  \n");
++    }
++
++    public int answer5() {
++        return 3;
++    }
++
+ }
+Index: src/com/company/Questions/Questions.java
+===================================================================
+diff --git a/src/com/company/Questions/Questions.java b/src/com/company/Questions/Questions.java
+deleted file mode 100644
+--- a/src/com/company/Questions/Questions.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,5 +0,0 @@
+-package com.company.Questions;
+-
+-public interface Questions {
+-
+-}
+Index: src/com/company/Lifebuoys/Audience.java
+===================================================================
+diff --git a/src/com/company/Lifebuoys/Audience.java b/src/com/company/Lifebuoys/Audience.java
+deleted file mode 100644
+--- a/src/com/company/Lifebuoys/Audience.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,4 +0,0 @@
+-package com.company.Lifebuoys;
+-
+-public class Audience extends Lifebuoys{
+-}
+Index: src/com/company/Main.java
+===================================================================
+diff --git a/src/com/company/Main.java b/src/com/company/Main.java
+deleted file mode 100644
+--- a/src/com/company/Main.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,9 +0,0 @@
+-package com.company;
+-
+-public class Main {
+-
+-    public static void main(String[] args) {
+-	Game game = new Game();
+-	game.startGame();
+-    }
+-}
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/com/company/Game.java
+===================================================================
+diff --git a/src/com/company/Game.java b/src/com/company/Game.java
+deleted file mode 100644
+--- a/src/com/company/Game.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,31 +0,0 @@
+-package com.company;
+-
+-
+-import java.util.Scanner;
+-
+-public class Game {
+-    Scanner scanner = new Scanner(System.in);
+-    private String username;
+-    public void startGame() {
+-        username();
+-        Log.info("Hey " + username + "\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
+-                "You may quit at any time and keep their earnings.\n" +
+-                "For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\n");
+-    }
+-
+-    private void username() {
+-        System.out.println("Enter username:   ");
+-        username = scanner.nextLine();
+-
+-    }
+-
+-    public void endGame(){
+-
+-    }
+-    public void giveUp(){
+-
+-    }
+-    public void winning(){
+-
+-    }
+-}
+Index: .idea/description.html
+===================================================================
+diff --git a/.idea/description.html b/.idea/description.html
+deleted file mode 100644
+--- a/.idea/description.html	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,1 +0,0 @@
+-<html>Simple <b>Java</b> application that includes a class with <code>main()</code> method</html>
+\ No newline at end of file
+Index: Projekt - Milionerzy.iml
+===================================================================
+diff --git a/Projekt - Milionerzy.iml b/Projekt - Milionerzy.iml
+deleted file mode 100644
+--- a/Projekt - Milionerzy.iml	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: src/com/company/Lifebuoys/CallToFriend.java
+===================================================================
+diff --git a/src/com/company/Lifebuoys/CallToFriend.java b/src/com/company/Lifebuoys/CallToFriend.java
+deleted file mode 100644
+--- a/src/com/company/Lifebuoys/CallToFriend.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,4 +0,0 @@
+-package com.company.Lifebuoys;
+-
+-public class CallToFriend extends Lifebuoys{
+-}
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+deleted file mode 100644
+--- a/.idea/encodings.xml	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="PROJECT" charset="UTF-8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/Projekt - Milionerzy.iml" filepath="$PROJECT_DIR$/Projekt - Milionerzy.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/project-template.xml
+===================================================================
+diff --git a/.idea/project-template.xml b/.idea/project-template.xml
+deleted file mode 100644
+--- a/.idea/project-template.xml	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,3 +0,0 @@
+-<template>
+-  <input-field default="com.company">IJ_BASE_PACKAGE</input-field>
+-</template>
+\ No newline at end of file
+Index: src/com/company/Lifebuoys/Lifebuoys.java
+===================================================================
+diff --git a/src/com/company/Lifebuoys/Lifebuoys.java b/src/com/company/Lifebuoys/Lifebuoys.java
+deleted file mode 100644
+--- a/src/com/company/Lifebuoys/Lifebuoys.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,4 +0,0 @@
+-package com.company.Lifebuoys;
+-
+-abstract public class Lifebuoys {
+-}
+Index: src/com/company/Lifebuoys/Fifty_fifty.java
+===================================================================
+diff --git a/src/com/company/Lifebuoys/Fifty_fifty.java b/src/com/company/Lifebuoys/Fifty_fifty.java
+deleted file mode 100644
+--- a/src/com/company/Lifebuoys/Fifty_fifty.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,4 +0,0 @@
+-package com.company.Lifebuoys;
+-
+-public class Fifty_fifty extends Lifebuoys{
+-}
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: README.md
+===================================================================
+diff --git a/README.md b/README.md
+deleted file mode 100644
+--- a/README.md	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,9 +0,0 @@
+-# Projekt-Milionerzy
+-**Funkcjonalność:**
+-* Przedstawienie zasad gry
+-* Gracz po wejściu do gry może ustawić swoją nazwę 
+-* Gracz przed każdym etapem gry będzie mieć do wyboru dwie kategorie
+-* W każdym momencie będzie można zakończyć grę z określoną sumą pieniędzy lub po prostu wyjść z gry
+-* Po udzieleniu poprawnej odpowiedzi gracz wybiera jedną z kilku skrzynek (w każdej skrzynce są poszczególne pule pieniędzy)
+-* w każdej skrzynce jest określony zakres pieniędzy wybierany losowo, np. skrzynka 1 -> od 5000zł do 25000zł -> następuje losowanie i wypada 10000zł
+-* Istnieje możliwość użycia kół ratunkowych (telefon do przyjaciela, publiczność, 50:50); w ciągu całej gry każde z kół można wykorzystać tylko raz
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ /dev/null	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectKey">
+-    <option name="state" value="project://e2804f05-5315-4fc6-a121-c522a6c26470" />
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Boxes/BoxNine.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxNine.java b/Boxes/BoxNine.java
+new file mode 100644
+--- /dev/null	(date 1609409031288)
++++ b/Boxes/BoxNine.java	(date 1609409031288)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxNine implements Pool{
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(30000, 45000, 60000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/BoxOne.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxOne.java b/Boxes/BoxOne.java
+new file mode 100644
+--- /dev/null	(date 1609409031289)
++++ b/Boxes/BoxOne.java	(date 1609409031289)
+@@ -0,0 +1,22 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxOne implements Pool{
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(10000, 25000, 50000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++
++}
+Index: Boxes/BoxTen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxTen.java b/Boxes/BoxTen.java
+new file mode 100644
+--- /dev/null	(date 1609409031290)
++++ b/Boxes/BoxTen.java	(date 1609409031290)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxTen implements Pool{
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(20000, 35000, 70000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/BoxEight.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxEight.java b/Boxes/BoxEight.java
+new file mode 100644
+--- /dev/null	(date 1609409031287)
++++ b/Boxes/BoxEight.java	(date 1609409031287)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxEight implements Pool{
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(100000, 150000, 200000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/BoxFive.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxFive.java b/Boxes/BoxFive.java
+new file mode 100644
+--- /dev/null	(date 1609409031287)
++++ b/Boxes/BoxFive.java	(date 1609409031287)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxFive implements Pool {
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(60000, 100000, 170000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/BoxThree.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxThree.java b/Boxes/BoxThree.java
+new file mode 100644
+--- /dev/null	(date 1609409031290)
++++ b/Boxes/BoxThree.java	(date 1609409031290)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxThree implements Pool  {
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(40000, 70000, 130000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/Pool.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/Pool.java b/Boxes/Pool.java
+new file mode 100644
+--- /dev/null	(date 1609409031291)
++++ b/Boxes/Pool.java	(date 1609409031291)
+@@ -0,0 +1,7 @@
++package milionerzy.Boxes;
++import java.util.List;
++
++public interface Pool {
++    List<Integer> money();
++    int randomPrizeMoney();
++}
+Index: Boxes/BoxSix.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxSix.java b/Boxes/BoxSix.java
+new file mode 100644
+--- /dev/null	(date 1609409031289)
++++ b/Boxes/BoxSix.java	(date 1609409031289)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxSix implements Pool {
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(10000, 25000, 40000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/BoxSeven.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxSeven.java b/Boxes/BoxSeven.java
+new file mode 100644
+--- /dev/null	(date 1609409031289)
++++ b/Boxes/BoxSeven.java	(date 1609409031289)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxSeven implements Pool{
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(26000, 75000, 130000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Boxes/BoxFour.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxFour.java b/Boxes/BoxFour.java
+new file mode 100644
+--- /dev/null	(date 1609409031288)
++++ b/Boxes/BoxFour.java	(date 1609409031288)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxFour implements Pool {
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(5000, 10000, 20000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: Prizes/Prize.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Prizes/Prize.java b/Prizes/Prize.java
+new file mode 100644
+--- /dev/null	(date 1609409031292)
++++ b/Prizes/Prize.java	(date 1609409031292)
+@@ -0,0 +1,94 @@
++package milionerzy.Prizes;
++
++import milionerzy.Boxes.*;
++import milionerzy.Log;
++
++import java.util.ArrayList;
++import java.util.Scanner;
++
++public class Prize {
++    BoxOne one = new BoxOne();
++    BoxTwo two = new BoxTwo();
++    BoxThree three = new BoxThree();
++    BoxFour four = new BoxFour();
++    BoxFive five = new BoxFive();
++    BoxSix six = new BoxSix();
++    BoxSeven seven = new BoxSeven();
++    BoxEight eight = new BoxEight();
++    BoxNine nine = new BoxNine();
++    BoxTen ten = new BoxTen();
++
++    private boolean check = false;
++
++    private ArrayList<Integer> usedBoxes = new ArrayList();
++
++
++    private int NumberOfBox = 0;
++    private int RoundPrize = 0;
++    private int TotalPrize = 0;
++    Scanner scanner = new Scanner(System.in);
++
++    private boolean checkIfUsedThisBox() {
++        for (int i = 0; i < usedBoxes.size(); i++) {
++            if (usedBoxes.get(i) == NumberOfBox) {
++                this.check = true;
++                break;
++            } else this.check = false;
++        }
++        return this.check;
++    }
++
++    public void chooseBox() {
++        do {
++            Log.info("Choose box: ");
++            NumberOfBox = scanner.nextInt();
++        } while (NumberOfBox < 0 || NumberOfBox > 10 || checkIfUsedThisBox() == true);
++    }
++
++    public int getRoundPrize() {
++
++
++        switch (NumberOfBox) {
++            case 1:
++                RoundPrize = one.randomPrizeMoney();
++                break;
++            case 2:
++                RoundPrize = two.randomPrizeMoney();
++                break;
++            case 3:
++                RoundPrize = three.randomPrizeMoney();
++                break;
++            case 4:
++                RoundPrize = four.randomPrizeMoney();
++                break;
++            case 5:
++                RoundPrize = five.randomPrizeMoney();
++                break;
++            case 6:
++                RoundPrize = six.randomPrizeMoney();
++                break;
++            case 7:
++                RoundPrize = seven.randomPrizeMoney();
++                break;
++            case 8:
++                RoundPrize = eight.randomPrizeMoney();
++                break;
++            case 9:
++                RoundPrize = nine.randomPrizeMoney();
++                break;
++            case 10:
++                this.RoundPrize = ten.randomPrizeMoney();
++                break;
++        }
++
++        usedBoxes.add(NumberOfBox);
++        TotalPrize += RoundPrize;
++        return RoundPrize;
++    }
++
++    public int getTotalPrize() {
++        return TotalPrize;
++    }
++
++
++}
+Index: Boxes/BoxTwo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Boxes/BoxTwo.java b/Boxes/BoxTwo.java
+new file mode 100644
+--- /dev/null	(date 1609409031290)
++++ b/Boxes/BoxTwo.java	(date 1609409031290)
+@@ -0,0 +1,21 @@
++package milionerzy.Boxes;
++
++import java.util.Arrays;
++import java.util.List;
++import java.util.Random;
++
++public class BoxTwo implements Pool {
++    Random rand=new Random();
++
++    private int RandomPrize;
++    private List<Integer> cash = Arrays.asList(50000, 100000, 250000);
++
++    public List<Integer> money(){
++        return this.cash;
++    }
++
++    public int randomPrizeMoney() {
++        RandomPrize=cash.get(rand.nextInt(cash.size()));
++        return RandomPrize;
++    }
++}
+Index: src/com/company/Log.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Log.java b/Log.java
+rename from src/com/company/Log.java
+rename to Log.java
+--- a/src/com/company/Log.java	(revision 048467e154163f346abed86fddf6bc0f8e9d0184)
++++ b/Log.java	(date 1609409031307)
+@@ -1,4 +1,4 @@
+-package com.company;
++package milionerzy;
+ 
+ public class Log {
+ 
+Index: Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.java b/Main.java
+new file mode 100644
+--- /dev/null	(date 1609409031292)
++++ b/Main.java	(date 1609409031292)
+@@ -0,0 +1,16 @@
++package milionerzy;
++
++public class Main {
++
++        public static void main(String[] args) {
++            Game game = new Game();
++            game.startGame();
++            game.rightAnswer();
++            game.rightAnswer();
++            game.rightAnswer();
++            game.wrongAnswer();
++
++
++        }
++    }
++
+Index: Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Game.java b/Game.java
+new file mode 100644
+--- /dev/null	(date 1609679240117)
++++ b/Game.java	(date 1609679240117)
+@@ -0,0 +1,45 @@
++package milionerzy;
++
++import milionerzy.Prizes.Prize;
++import java.util.Scanner;
++
++public class Game {
++    Scanner scanner = new Scanner(System.in);
++    Prize prize = new Prize();
++
++    private void username() {
++        System.out.println("Enter username:   ");
++        username = scanner.nextLine();
++
++    }
++
++    public void startGame() {
++        Log.info("You must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
++                "You may quit at any time and keep their earnings.\n" +
++                "For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\n");
++    }
++
++    public void rightAnswer() {
++        prize.chooseBox();
++        Log.info("Your prize: " + prize.getRoundPrize());
++    }
++
++    public void wrongAnswer() {
++        Log.info("Wrong answer. This is the end of the game, you won: " + prize.getTotalPrize());
++    }
++
++    public void endGame() {
++
++    }
++
++    public void giveUp() {
++        Log.info("It was the good game! You won: " + prize.getTotalPrize());
++
++    }
++
++    public void winning() {
++        Log.info("Congratulations!!! You are the genius!!! This is your total prize: " + prize.getTotalPrize());
++
++    }
++
++}
+Index: Questions/Questions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Questions/Questions.java b/Questions/Questions.java
+new file mode 100644
+--- /dev/null	(date 1609678649200)
++++ b/Questions/Questions.java	(date 1609678649200)
+@@ -0,0 +1,7 @@
++package milionerzy.Questions;
++
++abstract public class Questions {
++    public void getRandomQuestion(){
++
++    }
++}
