@@ -1,5 +1,6 @@
 package milionerzy.Prizes;
 
+
 import milionerzy.Boxes.*;
 import milionerzy.Log;
 
