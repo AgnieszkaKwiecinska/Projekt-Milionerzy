@@ -1,34 +1,32 @@
 package com.company;
 
-import com.company.Prizes.Prize;
-import com.company.Questions.Questions;
-
 import java.util.Scanner;
 
 public class Game {
-    FunctionGame functionGame = new FunctionGame();
     String username;
-    Scanner scanner = new Scanner(System.in);
-    private void username() {
-        System.out.println("Enter username:   ");
-        username = scanner.nextLine();
+    public Game(String username){
+        this.username = username;
     }
+    FunctionGame functionGame = new FunctionGame();
+    Scanner scanner = new Scanner(System.in);
+
 
     public void startGame() {
-        username();
         Log.info("Hey " + username + "\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
                 "You may quit at any time and keep their earnings.\n" +
                 "For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\n");
-        Log.info("if you ready enter '1', if you want to quit enter '0'");
-        int signToBeReady = scanner.nextInt();
+        //Log.info("Jeśli jesteś gotowy naciśnij '1', jeśli nie, naciśnij '0'");
+        playGame();
+        /*int signToBeReady = scanner.nextInt();
         if (signToBeReady == 1){
             playGame();
         }else if (signToBeReady == 0){
             Log.info("You quit");
-        }
+        }*/
     }
     public void playGame(){
-        functionGame.categoryChoice();
+        functionGame.displayCategoryChoice();
+        functionGame.displayQuestion();
     }
     public void endGame() {
 
