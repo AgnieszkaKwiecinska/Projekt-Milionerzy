@@ -1,39 +1,38 @@
 package milionerzy;
 
 import milionerzy.Prizes.Prize;
+import milionerzy.Questions.Questions;
 
+import java.util.Scanner;
 
 public class Game {
-
-    Prize prize = new Prize();
+    FunctionGame functionGame = new FunctionGame();
+    String username;
+    Scanner scanner = new Scanner(System.in);
+    private void username() {
+        System.out.println("Enter username:   ");
+        username = scanner.nextLine();
+    }
 
     public void startGame() {
-        Log.info("You must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
+        username();
+        Log.info("Hey " + username + "\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
                 "You may quit at any time and keep their earnings.\n" +
                 "For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\n");
+        Log.info("if you ready enter '1', if you want to quit enter '0'");
+        int signToBeReady = scanner.nextInt();
+        if (signToBeReady == 1){
+            playGame();
+        }else if (signToBeReady == 0){
+            Log.info("You quit");
+        }
     }
-
-    public void rightAnswer() {
-        prize.chooseBox();
-        Log.info("Your prize: " + prize.getRoundPrize());
+    public void playGame(){
+        functionGame.categoryChoice();
     }
-
-    public void wrongAnswer() {
-        Log.info("Wrong answer. This is the end of the game, you won: " + prize.getTotalPrize());
-    }
-
     public void endGame() {
 
     }
 
-    public void giveUp() {
-        Log.info("It was the good game! You won: " + prize.getTotalPrize());
-
-    }
-
-    public void winning() {
-        Log.info("Congratulations!!! You are the genius!!! This is your total prize: " + prize.getTotalPrize());
-
-    }
 
 }

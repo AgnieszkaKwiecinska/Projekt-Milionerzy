@@ -1,16 +1,14 @@
 package milionerzy;
 
+
 public class Main {
 
-        public static void main(String[] args) {
-            Game game = new Game();
-            game.startGame();
-            game.rightAnswer();
-            game.rightAnswer();
-            game.rightAnswer();
-            game.wrongAnswer();
-
-
-        }
+    public static void main(String[] args) {
+        FunctionGame fGame = new FunctionGame();
+        Game game = new Game();
+        game.startGame();
+        fGame.lifelineChoice();
+        fGame.lifelineChoice();
     }
+}
 
