@@ -9,6 +9,7 @@ public class FunctionGame {
     Questions questions = new Questions();
     Prize prize = new Prize();
     private String firstCategory, secondCategory;
+    private int answerUser;
 
     public void displayCategoryChoice() {
         firstCategory = questions.getRandomCategory();
@@ -27,10 +28,17 @@ public class FunctionGame {
             questions.getQuestion(secondCategory);
         }
     }
+    public void getAnswerUser(){
+        answerUser = scanner.nextInt();
+    }
 
+    public boolean answerToQuestion(){
+        boolean respond = true;
+        return respond;
+    }
     public void rightAnswer() {
         prize.chooseBox();
-        Log.info("Dobra odpowiedź. Twoja nagroda: " + prize.getRoundPrize());
+        Log.info("Twoja nagroda: " + prize.getRoundPrize());
     }
 
     public void wrongAnswer() {
@@ -38,7 +46,7 @@ public class FunctionGame {
     }
 
     public void giveUp() {
-        Log.info("To była dobra gra! Wygrałeś: " + prize.getTotalPrize());
+        Log.info("Wygrałeś: " + prize.getTotalPrize());
 
     }
 
