@@ -18,6 +18,6 @@ public class Audience implements LifeLines {
     }
 
     public String name(){
-        return "Audience";
+        return "Publiczność";
     }
 }

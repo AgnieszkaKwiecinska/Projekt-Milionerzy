@@ -18,6 +18,6 @@ public class CallToFriend implements LifeLines {
     }
 
     public String name(){
-        return "CallToFriend";
+        return "Telefon do przyjaciela";
     }
 }

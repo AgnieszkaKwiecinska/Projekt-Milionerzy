@@ -41,8 +41,14 @@ public class Game {
         String chosenCategory = functionGame.askForCategory();
         Question generatedQuestion = functionGame.getNextQuestion(chosenCategory);
         functionGame.displayQuestion(generatedQuestion);
+        Log.info("5) Użyj koła ratunkowego (jeśli jest aktywne)");
+        Log.info("Wybierz odpowiedź: ");
         int userAnswer = functionGame.getUserAnswerForQuestion();
-
+        if(userAnswer == 5) {
+            functionGame.lifelineChoice(generatedQuestion);
+            Log.info("Wybierz odpowiedź: ");
+            userAnswer = functionGame.getUserAnswerForQuestion();
+        }
         if (generatedQuestion.getRightAnswer() == userAnswer) {
             functionGame.rightAnswer();
             return true;

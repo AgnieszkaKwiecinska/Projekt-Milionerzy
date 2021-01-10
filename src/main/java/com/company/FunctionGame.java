@@ -8,6 +8,7 @@ import com.company.Prizes.Prize;
 import com.company.Questions.Question;
 import com.company.Questions.Questions;
 
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,9 +19,9 @@ public class FunctionGame {
     CallToFriend callToFriend = new CallToFriend();
     Fifty_fifty fifty_fifty = new Fifty_fifty();
     Prize prize = new Prize();
+    Random rand = new Random();
     private ArrayList<LifeLines> lifelines = new ArrayList<>();
     private String firstCategory, secondCategory;
-    private int answerUser;
 
     public void addLifeLine() {
         lifelines.clear();
@@ -36,7 +37,7 @@ public class FunctionGame {
     }
 
     public void activeLifeLines() {
-        Log.info("Active milionerzy.LifeLines: ");
+        Log.info("Aktywne koła ratunkowe: ");
         int i = 0;
         for (LifeLines lifeline : lifelines) {
             Log.info(i + ". " + lifeline.name());
@@ -44,35 +45,78 @@ public class FunctionGame {
         }
     }
 
-    public void lifelineChoice() {
+    public void lifelineChoice(Question generatedQuestion) {
         addLifeLine();
         if (lifelines.isEmpty()) {
-            Log.info("You don't have any milionerzy.LifeLines left :(");
+            Log.info("Nie posiadasz więcej kół ratunkowych :(");
         } else {
             activeLifeLines();
             int chosenLifeLine;
             String userChoice;
             do {
-                Log.info("Choose your LifeLine: ");
+                Log.info("Wybierz koło ratunkowe: ");
                 chosenLifeLine = scanner.nextInt();
             } while (chosenLifeLine >= lifelines.size() || chosenLifeLine < 0);
             userChoice = lifelines.get(chosenLifeLine).name();
 
-            if (userChoice.equals("Audience")) {
+            if (userChoice.equals("Publiczność")) {
                 audience.use();
-                Log.info("cos sie stanie 1");
+                useAudience(generatedQuestion);
             }
-            if (userChoice.equals("CallToFriend")) {
+            if (userChoice.equals("Telefon do przyjaciela")) {
                 callToFriend.use();
-                Log.info("cos sie stanie 2");
+                useCallToFriend(generatedQuestion);
             }
-            if (userChoice.equals("FiftyFifty")) {
+            if (userChoice.equals("50/50")) {
                 fifty_fifty.use();
-                Log.info("cos sie stanie 3");
+                useFiftyFifty(generatedQuestion);
             }
         }
 
     }
+
+    public void useAudience(Question generatedQuestion) {
+        Log.info(generatedQuestion.getContent());
+        for (int i = 0; i < generatedQuestion.getAnswers().size(); i++) {
+            int questionNumber = i + 1;
+            String answerContent = generatedQuestion.getAnswers().get(i);
+            if(questionNumber == generatedQuestion.getRightAnswer()){
+                Log.info("" + questionNumber + ") " + answerContent + "  <-- WYBÓR PUBLICZNOŚCI");
+            } else
+            Log.info("" + questionNumber + ") " + answerContent);
+        }
+        Log.info();
+    }
+
+    public void useCallToFriend(Question generatedQuestion) {
+        Log.info(generatedQuestion.getContent());
+        int friendChoice = rand.nextInt(4);
+        for (int i = 0; i < generatedQuestion.getAnswers().size(); i++) {
+            int questionNumber = i + 1;
+            String answerContent = generatedQuestion.getAnswers().get(i);
+            if(questionNumber == friendChoice){
+                Log.info("" + questionNumber + ") " + answerContent + "  <-- WYBÓR PRZYJACIELA");
+            } else
+                Log.info("" + questionNumber + ") " + answerContent);
+        }
+        Log.info();
+    }
+
+    public void useFiftyFifty(Question generatedQuestion){
+        Log.info(generatedQuestion.getContent());
+
+            if(generatedQuestion.getRightAnswer() == 4) {
+                Log.info("" + (generatedQuestion.getRightAnswer() - 1) + ") " + generatedQuestion.getAnswers().get(generatedQuestion.getRightAnswer()));
+                Log.info("" + generatedQuestion.getRightAnswer() + ") " + generatedQuestion.getAnswers().get(generatedQuestion.getRightAnswer()+1));
+            }
+            else{
+                Log.info("" + generatedQuestion.getRightAnswer() + ") " + generatedQuestion.getAnswers().get(generatedQuestion.getRightAnswer()-1));
+                Log.info("" + (generatedQuestion.getRightAnswer() + 1) + ") " + generatedQuestion.getAnswers().get(generatedQuestion.getRightAnswer()));
+            }
+            Log.info();
+        }
+
+
 
     public void displayCategoryChoice() {
         firstCategory = questions.getRandomCategory();
@@ -93,25 +137,8 @@ public class FunctionGame {
         Log.info();
     }
 
-    public void displayQuestion() {
-        int categoryChoice = scanner.nextInt();
-        if (categoryChoice == 1) {
-            questions.getQuestion(firstCategory);
-        } else if (categoryChoice == 2) {
-            questions.getQuestion(secondCategory);
-        }
-    }
-
-    public void getAnswerUser() {
-        answerUser = scanner.nextInt();
-    }
-
-    public boolean answerToQuestion() {
-        boolean respond = true;
-        return respond;
-    }
-
     public void rightAnswer() {
+        Log.info("Brawo!!! Dobra Odpowiedź.");
         prize.chooseBox();
         Log.info("Twoja nagroda: " + prize.getRoundPrize());
     }
