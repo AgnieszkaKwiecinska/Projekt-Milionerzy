@@ -1,7 +1,7 @@
-import milionerzy.LifeLines.*;
-import milionerzy.Log;
-import milionerzy.Prizes.Prize;
-import milionerzy.Questions.Questions;
+import com.company.LifeLines.*;
+import com.company.Log;
+import com.company.Prizes.Prize;
+import com.company.Questions.Questions;
 
 import java.util.Scanner;
 import java.util.ArrayList;

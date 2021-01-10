@@ -1,4 +1,4 @@
-import milionerzy.Log;
+import com.company.Log;
 
 import java.util.Scanner;
 
