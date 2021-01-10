@@ -1,43 +1,39 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class WordWarII extends Questions {
-    private int answer;
-
-    public void questions(int numberQuestion) {
+public class WordWarII {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("Jak nazywała się pierwsza organizacja Polskiego Panśtwa Podziemnego?\n");
-                Log.info("1) Związek Walki Zbrojnej\n2) Szare Szeregi\n3) Służba Zwycięstwu Polski\n4) Armia Krajowa\n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("Związek Walki Zbrojnej", "Szare Szeregi", "Służba Zwycięstwu Polski", "Armia Krajowa");
+                return new Question("Jak nazywała się pierwsza organizacja Polskiego Panśtwa Podziemnego?",
+                        answers,
+                        3);
             }
             case 2: {
-                Log.info("Ile samolotów japońskich wzieło udział w nalocie na Pearl Harbor?\n");
-                Log.info("1) 199\n2) 98\n3) 303 \n4) 414 \n");
-                answer = 4;
-                break;
+                List<String> answers = Arrays.asList("199", "98", "303 ", "414");
+                return new Question("Ile samolotów japońskich wzieło udział w nalocie na Pearl Harbor?",
+                        answers,
+                        4);
             }
 
             case 3: {
-                Log.info("W Którym miesiącu Japonia podpisała kapitulację?\n");
-                Log.info("1) W kwietniu\n2) W lipcu\n3) We wrześniu\n4) W maju \n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("W kwietniu", "W lipcu", "We wrześniu", "W maju");
+                return new Question("W Którym miesiącu Japonia podpisała kapitulację?",
+                        answers,
+                        3);
             }
 
             case 4: {
-                Log.info("Kiedy wybuchła II wojna światowa?\n");
-                Log.info("1) 7 sierpnia 1939\n2) 1 października 1939 \n3) 1 września 1939 \n4) 17 września 1939 \n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("7 sierpnia 1939", "1 października 1939 ", "1 września 1939 ", "17 września 1939");
+                return new Question("Kiedy wybuchła II wojna światowa?",
+                        answers,
+                        3);
             }
-
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
         }
-    }
-
-    public int getAnswer() {
-        return answer;
     }
 }

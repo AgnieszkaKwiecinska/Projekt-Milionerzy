@@ -1,44 +1,44 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class Slang extends Questions {
-    private int answer;
+public class Slang {
 
-    public void questions(int numberQuestion) {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("Jakie słowo w 2019 roku wygrało w konkursie PWN?\n");
-                Log.info("1) Jesieniara\n2) Eluwina\n3) Dzban\n4) Alternatywka\n");
-                answer = 4;
-                break;
+
+                List<String> answers = Arrays.asList("Jesieniara", "Eluwina", "Dzban", "Alternatywka");
+                return new Question("Jakie słowo w 2019 roku wygrało w konkursie PWN?",
+                        answers,
+                        4);
             }
             case 2: {
-                Log.info("Co znaczy słowo 'masny'?\n");
-                Log.info("1) osoba głupia, robiąca coś głupiego\n2) coś bardzo dobrego, grubego \n3) osoba ubierająca się specyficznie\n4) osoba bogata, próżna \n");
-                answer = 2;
-                break;
+
+                List<String> answers = Arrays.asList("osoba głupia, robiąca coś głupiego", "coś bardzo dobrego, grubego ", "osoba ubierająca się specyficznie", "osoba bogata, próżna ");
+                return new Question("Co znaczy słowo 'masny'?",
+                        answers,
+                        2);
             }
 
             case 3: {
-                Log.info("Co znaczy słowo 'boomer'?\n");
-                Log.info("1) ironiczna nazwa osoby starszej \n2) śmieszna sytuacja\n3) impreze \n4) modny, ciekawy\n");
-                answer = 1;
-                break;
+
+                List<String> answers = Arrays.asList("ironiczna nazwa osoby starszej ", "śmieszna sytuacja", "impreze ", "modny, ciekawy");
+                return new Question("Co znaczy słowo 'boomer'?",
+                        answers,
+                        1);
             }
 
             case 4: {
-                Log.info("Co znaczy słowo 'sztywniutko'?\n");
-                Log.info("1) bez sensu \n2) zgodnie z planem\n3) za póżno \n4) coś sztywnego, nudnego\n");
-                answer = 2;
-                break;
+
+                List<String> answers = Arrays.asList("bez sensu ", "zgodnie z planem", "za póżno ", "coś sztywnego, nudnego");
+                return new Question("Co znaczy słowo 'sztywniutko'?",
+                        answers,
+                        2);
             }
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
         }
     }
-
-    public int getAnswer() {
-        return answer;
-    }
-
-
 }
