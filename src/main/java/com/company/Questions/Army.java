@@ -26,7 +26,7 @@ public class Army {
                 );
             }
             case 4:
-                List<String> answers = Arrays.asList("Kuszy", "Procy", "Haubicy", "Łuku");
+                List<String> answers = Arrays.asList("Kuszy", "Procy", "Haubicy", "łuku");
                 return new Question(
                         "Bełt jest amunicją używaną w której broni?",
                         answers,

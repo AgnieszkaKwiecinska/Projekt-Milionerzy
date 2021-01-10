@@ -32,7 +32,7 @@ public class TheWitcher {
 
             case 4: {
 
-                List<String> answers = Arrays.asList("Łania", "Kania", "Matka", "Maria ");
+                List<String> answers = Arrays.asList("łania", "Kania", "Matka", "Maria ");
                 return new Question("Co znaczy Milva w Starszej Mowie?",
                         answers,
                         2);

@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.LifeLines.UseLifeLine;
 import com.company.Questions.Question;
 
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Game {
     }
 
     FunctionGame functionGame = new FunctionGame();
-    Scanner scanner = new Scanner(System.in);
+    UseLifeLine useLifeLine = new UseLifeLine();
 
     public void startGame() {
         Log.info("Hey " + username + "\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
@@ -41,8 +42,14 @@ public class Game {
         String chosenCategory = functionGame.askForCategory();
         Question generatedQuestion = functionGame.getNextQuestion(chosenCategory);
         functionGame.displayQuestion(generatedQuestion);
+        Log.info("5) Użyj koła ratunkowego (jeśli jest aktywne)");
+        Log.info("Wybierz odpowiedź: ");
         int userAnswer = functionGame.getUserAnswerForQuestion();
-
+        if(userAnswer == 5) {
+            useLifeLine.lifelineChoice(generatedQuestion);
+            Log.info("Wybierz odpowiedź: ");
+            userAnswer = functionGame.getUserAnswerForQuestion();
+        }
         if (generatedQuestion.getRightAnswer() == userAnswer) {
             functionGame.rightAnswer();
             return true;

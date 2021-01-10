@@ -18,7 +18,7 @@ public class Fifty_fifty implements LifeLines {
     }
 
     public String name(){
-        return "FiftyFifty";
+        return "50/50";
     }
 
 }

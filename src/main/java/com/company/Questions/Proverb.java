@@ -22,7 +22,7 @@ public class Proverb {
 
             case 3: {
                 List<String> answers = Arrays.asList("Jest łaskawością", "Uśmierza ból", "Dobroci całość", "To absolutność");
-                return new Question("Łagodność...",
+                return new Question("łagodność...",
                         answers,
                         2);
             }
