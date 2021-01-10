@@ -1,0 +1,11 @@
+
+plugins {
+    id 'java'
+}
+
+// src/java/main/
+jar {
+    manifest {
+        attributes('Main-Class': 'Main')
+    }
+}
