@@ -1,9 +1,7 @@
 package com.company;
 
-import com.company.LifeLines.UseLifeLine;
+import com.company.LifeLines.Lifebuoys;
 import com.company.Questions.Question;
-
-import java.util.Scanner;
 
 public class Game {
     String username;
@@ -13,16 +11,10 @@ public class Game {
     }
 
     FunctionGame functionGame = new FunctionGame();
-    UseLifeLine useLifeLine = new UseLifeLine();
+    Lifebuoys useLifeLine = new Lifebuoys();
 
     public void startGame() {
-        Log.info("Hey " + username + "\nYou must answer 7 multiple-choice questions correctly in a row to win the jackpot.\n" +
-                "You may quit at any time and keep their earnings.\n" +
-                "For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\n");
-        //Log.info("Jeśli chcesz skończyć gre naciśnij 0, jeśli chcesz grać naciśnij 9");
-        //int signToBeReady = scanner.nextInt();
-
-//        functionGame.displayGameRules();
+        functionGame.displayGameRules();
         int round = 0;
         boolean hasLost = false;
 
@@ -45,12 +37,15 @@ public class Game {
         Log.info("5) Użyj koła ratunkowego (jeśli jest aktywne)");
         Log.info("Wybierz odpowiedź: ");
         int userAnswer = functionGame.getUserAnswerForQuestion();
-        if(userAnswer == 5) {
+        if (userAnswer == 5) {
             useLifeLine.lifelineChoice(generatedQuestion);
             Log.info("Wybierz odpowiedź: ");
             userAnswer = functionGame.getUserAnswerForQuestion();
         }
-        if (generatedQuestion.getRightAnswer() == userAnswer) {
+        if (userAnswer == 9) {
+            functionGame.giveUp();
+            return false;
+        } else if (generatedQuestion.getRightAnswer() == userAnswer) {
             functionGame.rightAnswer();
             return true;
         } else {
@@ -58,10 +53,4 @@ public class Game {
             return false;
         }
     }
-
-    public void endGame() {
-
-    }
-
-
 }

@@ -44,7 +44,7 @@ public class FunctionGame {
     }
 
     public void giveUp() {
-        Log.info("Wygrałeś: " + prize.getTotalPrize());
+        Log.info("Szkoda że odchodzisz, wygrałeś: " + prize.getTotalPrize());
 
     }
 
@@ -62,7 +62,7 @@ public class FunctionGame {
             } else if (categoryChoice == 2) {
                 category = secondCategory;
             } else {
-                Log.info("Inna wartosc");
+                Log.info("Inna wartość");
             }
         } while (category == null);
 
@@ -77,5 +77,12 @@ public class FunctionGame {
         int answerToQestion;
         answerToQestion = scanner.nextInt();
         return answerToQestion;
+    }
+
+    public void displayGameRules() {
+        Log.info("Aby wygrać główną nagrodę, musisz poprawnie odpowiedzieć na 7 pytań wielokrotnego wyboru pod rząd.\n" +
+                "Możesz zrezygnować w dowolnym momencie i zachować swoje zarobki.\n" +
+                "Na każde pytanie, przed podjęciem decyzji, czy grać dalej, czy też nie, pokazuje się pytanie i cztery możliwe odpowiedzi wraz z możliwością użycia koła ratunkowego.\n");
+        Log.info("Jeżeli chcesz wyjść z gry naciśnij 9");
     }
 }

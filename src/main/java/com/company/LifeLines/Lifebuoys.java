@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class UseLifeLine {
+public class Lifebuoys {
     Scanner scanner = new Scanner(System.in);
     Audience audience = new Audience();
     CallToFriend callToFriend = new CallToFriend();
@@ -83,7 +83,7 @@ public class UseLifeLine {
 
     public void useCallToFriend(Question generatedQuestion) {
         Log.info(generatedQuestion.getContent());
-        int friendChoice = rand.nextInt(4);
+        int friendChoice = rand.nextInt(5) + 1;
         for (int i = 0; i < generatedQuestion.getAnswers().size(); i++) {
             int questionNumber = i + 1;
             String answerContent = generatedQuestion.getAnswers().get(i);
