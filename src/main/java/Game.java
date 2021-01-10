@@ -1,7 +1,4 @@
-package milionerzy;
-
-import milionerzy.Prizes.Prize;
-import milionerzy.Questions.Questions;
+import milionerzy.Log;
 
 import java.util.Scanner;
 

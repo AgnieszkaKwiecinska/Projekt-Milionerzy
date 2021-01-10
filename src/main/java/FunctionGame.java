@@ -1,6 +1,5 @@
-package milionerzy;
-
 import milionerzy.LifeLines.*;
+import milionerzy.Log;
 import milionerzy.Prizes.Prize;
 import milionerzy.Questions.Questions;
 
@@ -31,7 +30,7 @@ public class FunctionGame {
     }
 
     public void activeLifeLines() {
-        Log.info("Active LifeLines: ");
+        Log.info("Active milionerzy.LifeLines: ");
         int i = 0;
         for(LifeLines lifeline: lifelines) {
                 Log.info(i + ". " + lifeline.name());
@@ -42,7 +41,7 @@ public class FunctionGame {
     public void lifelineChoice(){
         addLifeLine();
         if(lifelines.isEmpty()){
-            Log.info("You don't have any LifeLines left :(");
+            Log.info("You don't have any milionerzy.LifeLines left :(");
         }
         else {
             activeLifeLines();
