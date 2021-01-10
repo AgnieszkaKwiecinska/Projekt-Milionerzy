@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Questions.Question;
+
 import java.util.Scanner;
 
 public class Game {
@@ -18,17 +20,35 @@ public class Game {
                 "For each question, they are shown the question and four possible answers in advance before deciding whether to play on or not.\n");
         //Log.info("Jeśli chcesz skończyć gre naciśnij 0, jeśli chcesz grać naciśnij 9");
         //int signToBeReady = scanner.nextInt();
-        playGame();
+
+//        functionGame.displayGameRules();
+        int round = 0;
+        boolean hasLost = false;
+
+        while (round < 7 && !hasLost) {
+            boolean hasWon = playSingleRound(round);
+            hasLost = !hasWon;
+            round++;
+        }
+
+        if (!hasLost) {
+            functionGame.winning();
+        }
     }
 
-    public void playGame() {
+    public boolean playSingleRound(int round) {
         functionGame.displayCategoryChoice();
-        functionGame.displayQuestion();
-        functionGame.getAnswerUser();
-        if (functionGame.answerToQuestion() == true) {
+        String chosenCategory = functionGame.askForCategory();
+        Question generatedQuestion = functionGame.getNextQuestion(chosenCategory);
+        functionGame.displayQuestion(generatedQuestion);
+        int userAnswer = functionGame.getUserAnswerForQuestion();
+
+        if (generatedQuestion.getRightAnswer() == userAnswer) {
             functionGame.rightAnswer();
+            return true;
         } else {
             functionGame.wrongAnswer();
+            return false;
         }
     }
 

@@ -1,41 +1,46 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class CounterStrike extends Questions {
-    private int answer;
-
-    public void questions(int numberQuestion) {
+public class CounterStrike {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("Które miejsce wśród 20 najlepszych graczy 2016 zajął Magiskb0Y?\n");
-                Log.info("1) 2\n2) 14\n3) 19\n4) 15\n");
-                answer = 2;
-                break;
+                List<String> answers = Arrays.asList("2", "14", "19", "15");
+                return new Question(
+                        "Które miejsce wśród 20 najlepszych graczy 2016 zajął Magiskb0Y?",
+                        answers,
+                        2
+                );
             }
             case 2: {
-                Log.info("Który z podanych granatów jest najtańszy?\n");
-                Log.info("1) Granat zapalający\n2) Mołotov\n3) Granat dymny \n4) Granat błyskowo-hukowy \n");
-                answer = 4;
-                break;
+                List<String> answers = Arrays.asList("Granat zapalający", "Mołotov", "Granat dymny ", "Granat błyskowo-hukowy ");
+                return new Question(
+                        "Który z podanych granatów jest najtańszy?",
+                        answers,
+                        4
+                );
             }
             case 3: {
-                Log.info("Na której mapie możemy spotkać takie miejscówki jak Rondo, Drop albo Matrix?\n");
-                Log.info("1) Cache\n2) Inferno\n3) Mirage\n4) Cobblestone \n");
-                answer = 1;
-                break;
+                List<String> answers = Arrays.asList("fxy0", "ScreaM", "fox", "ropz");
+                return new Question(
+                        "Który z podanych graczy jest francuzem?",
+                        answers,
+                        1
+                );
             }
             case 4: {
-                Log.info("Na której mapie możemy spotkać takie miejscówki jak Rondo, Drop albo Matrix?\n");
-                Log.info("1) Cache\n2) Inferno\n3) Mirage\n4) Cobblestone \n");
-                answer = 4;
-                break;
+                List<String> answers = Arrays.asList("Cache", "Inferno", "Mirage", "Cobblestone ");
+                return new Question(
+                        "Na której mapie możemy spotkać takie miejscówki jak Rondo, Drop albo Matrix?",
+                        answers,
+                        4
+                );
             }
-
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
         }
     }
 
-    public int getAnswer() {
-        return answer;
-    }
 }

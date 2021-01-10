@@ -1,41 +1,40 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class Army extends Questions {
-    private int answer;
-
-    public void questions(int numberQuestion) {
+public class Army {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("Browning Hi-Power został skonstruowany przez: \n");
-                Log.info("1) Sudajewa\n2) Szpagina\n3) Johna Browninga\n4) D.Saive'a\n");
-                answer = 4;
-                break;
+                List<String> answers = Arrays.asList("Sudajewa", "Szpagina", "Johna Browninga", "D.Saive'a");
+                return new Question("Browning Hi-Power został skonstruowany przez:", answers, 4);
             }
             case 2: {
-                Log.info("Wojskowe Powiedzenie: łyżka składa się z: \n");
-                Log.info("1) Żołnierza\n2) Trzaskiem\n3) Stopu metali\n4) Trzymaka i komory zupnej \n");
-                answer = 4;
-                break;
+                List<String> answers = Arrays.asList("Żołnierza", "Trzaskiem", "Stopu metali", "Trzymaka i komory zupnej");
+                return new Question(
+                        "Wojskowe Powiedzenie: łyżka składa się z: ",
+                        answers,
+                        4
+                );
             }
-
             case 3: {
-                Log.info("7ATP to: \n");
-                Log.info("1) Czołg ciężki\n2) Niszczyciel czołgów\n3) Czołg lekki\n4) Czołg średni\n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("Czołg ciężki", "Niszczyciel czołgów", "Czołg lekki", "Czołg średni");
+                return new Question("7ATP to: ",
+                        answers,
+                        3
+                );
             }
-
             case 4:
-                Log.info("Bełt jest amunicją używaną w której broni?\n");
-                Log.info("1) Kuszy\n2) Procy\n3) Haubicy\n4) Łuku \n");
-                answer = 1;
+                List<String> answers = Arrays.asList("Kuszy", "Procy", "Haubicy", "Łuku");
+                return new Question(
+                        "Bełt jest amunicją używaną w której broni?",
+                        answers,
+                        1
+                );
 
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
         }
-    }
-
-    public int getAnswer() {
-        return answer;
     }
 }

@@ -1,42 +1,44 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class TheWitcher extends Questions {
-    private int answer;
+public class TheWitcher {
 
-    public void questions(int numberQuestion) {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("Kim jest 'Kwarteronka'?\n");
-                Log.info("1) Pół-elfka\n2) Niziołek\n3) Ćwierć-elfka\n4) Elfka\n");
-                answer = 3;
-                break;
+
+                List<String> answers = Arrays.asList("Pół-elfka", "Niziołek", "Ćwierć-elfka", "Elfka");
+                return new Question("Kim jest 'Kwarteronka'?",
+                        answers,
+                        3);
             }
             case 2: {
-                Log.info("W Jakim kraju znajdowało się siedlisko wiedźminów Kaer Morhen?\n");
-                Log.info("1) Redanii\n2) Aedrin\n3) Temerii \n4) Kaedwen \n");
-                answer = 4;
-                break;
+
+                List<String> answers = Arrays.asList("Redanii", "Aedrin", "Temerii ", "Kaedwen ");
+                return new Question("W Jakim kraju znajdowało się siedlisko wiedźminów Kaer Morhen?",
+                        answers,
+                        4);
             }
 
             case 3: {
-                Log.info("Jakie królewska krew płynie w Ciri?\n");
-                Log.info("1) Cintryjska\n2) Redańska\n3) Kovirska\n4) Temerska\n");
-                answer = 1;
-                break;
+
+                List<String> answers = Arrays.asList("Cintryjska", "Redańska", "Kovirska", "Temerska");
+                return new Question("Jakie królewska krew płynie w Ciri?",
+                        answers,
+                        1);
             }
 
             case 4: {
-                Log.info("Co znaczy Milva w Starszej Mowie?\n");
-                Log.info("1) Łania\n2) Kania\n3) Matka\n4) Maria \n");
-                answer = 2;
-                break;
-            }
-        }
-    }
 
-    public int getAnswer() {
-        return answer;
+                List<String> answers = Arrays.asList("Łania", "Kania", "Matka", "Maria ");
+                return new Question("Co znaczy Milva w Starszej Mowie?",
+                        answers,
+                        2);
+            }
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
+        }
     }
 }

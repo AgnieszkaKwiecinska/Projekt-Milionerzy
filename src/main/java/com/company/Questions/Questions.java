@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class Questions {
     int numberQuestionArmy, numberQuestionCounterStrike, numberQuestionCyberPunk, numberQuestionHardWord, numberQuestionLeague,
-    numberQuestionMinecraft, numberQuestionProgrammer,numberQuestionProverb, numberQuestionSlang, numberQuestionStarWars,
-    numberQuestionSurprise, numberQuestionTheWitcher, numberQuestionVikingHistory, numberQuestionWeapons, numberQuestionWordWarI, numberQuestionWordWarII;
+            numberQuestionMinecraft, numberQuestionProgrammer, numberQuestionProverb, numberQuestionSlang, numberQuestionStarWars,
+            numberQuestionSurprise, numberQuestionTheWitcher, numberQuestionVikingHistory, numberQuestionWeapons, numberQuestionWordWarI, numberQuestionWordWarII;
 
     public String getRandomCategory() {
         String[] name =
@@ -18,104 +18,91 @@ public class Questions {
     }
 
 
-    public void getQuestion(String category) {
+    public Question getQuestion(String category) {
         switch (category) {
             case "Armia": {
                 Army army = new Army();
                 numberQuestionArmy++;
-                army.questions(numberQuestionArmy);
-                break;
+                return army.getQuestion(numberQuestionArmy);
             }
             case "Counter Strike": {
                 CounterStrike counterStrike = new CounterStrike();
                 numberQuestionCounterStrike++;
-                counterStrike.questions(numberQuestionCounterStrike);
-                break;
+                return counterStrike.getQuestion(numberQuestionCounterStrike);
             }
             case "Cyber Punk": {
                 CyberPunk cyberPunk = new CyberPunk();
                 numberQuestionCyberPunk++;
-                cyberPunk.questions(numberQuestionCyberPunk);
-                break;
+                return cyberPunk.getQuestion(numberQuestionCyberPunk);
             }
             case "Trudne Słowa": {
                 HardWord hardWord = new HardWord();
                 numberQuestionHardWord++;
-                hardWord.questions(numberQuestionHardWord);
-                break;
+               return hardWord.getQuestion(numberQuestionHardWord);
             }
             case "League of Legends": {
                 LeagueOfLegends leagueOfLegends = new LeagueOfLegends();
                 numberQuestionLeague++;
-                leagueOfLegends.questions(numberQuestionLeague);
-                break;
+                return leagueOfLegends.getQuestion(numberQuestionLeague);
             }
             case "Minecraft": {
                 Minecraft minecraft = new Minecraft();
                 numberQuestionMinecraft++;
-                minecraft.questions(numberQuestionMinecraft);
-                break;
+                return minecraft.getQuestion(numberQuestionMinecraft);
             }
             case "Programista": {
                 Programmer programmer = new Programmer();
                 numberQuestionProgrammer++;
-                programmer.questions(numberQuestionProgrammer);
-                break;
+                return programmer.getQuestion(numberQuestionProgrammer);
             }
             case "Przysłowia":{
                 Proverb proverb = new Proverb();
                 numberQuestionProverb++;
-                proverb.questions(numberQuestionProverb);
-                break;
+                return proverb.getQuestion(numberQuestionProverb);
             }
             case "Slang":{
                 Slang slang = new Slang();
                 numberQuestionSlang++;
-                slang.questions(numberQuestionSlang);
-                break;
+                return slang.getQuestion(numberQuestionSlang);
             }
             case "Star Wars":{
                 StarWars starWars = new StarWars();
                 numberQuestionStarWars++;
-                starWars.questions(numberQuestionStarWars);
-                break;
+                return starWars.getQuestion(numberQuestionStarWars);
             }
             case "Niespodzianka":{
                 Surprise surprise = new Surprise();
                 numberQuestionSurprise++;
-                surprise.questions(numberQuestionSurprise);
-                break;
+                return surprise.getQuestion(numberQuestionSurprise);
             }
             case "Wiedźmin":{
                 TheWitcher theWitcher = new TheWitcher();
                 numberQuestionTheWitcher++;
-                theWitcher.questions(numberQuestionTheWitcher);
-                break;
+                return theWitcher.getQuestion(numberQuestionTheWitcher);
             }
             case "Historia Wikingów":{
                 VikingHistory vikingHistory = new VikingHistory();
                 numberQuestionVikingHistory++;
-                vikingHistory.questions(numberQuestionVikingHistory);
-                break;
+                return vikingHistory.getQuestion(numberQuestionVikingHistory);
             }
             case "Bronie":{
                 Weapons weapons = new Weapons();
                 numberQuestionWeapons++;
-                weapons.questions(numberQuestionWeapons);
-                break;
+                return weapons.getQuestion(numberQuestionWeapons);
             }
             case "I Wojna Światowa":{
                 WordWarI wordWarI = new WordWarI();
                 numberQuestionWordWarI++;
-                wordWarI.questions(numberQuestionWordWarI);
-                break;
+                return wordWarI.getQuestion(numberQuestionWordWarI);
             }
             case "II Wojna Światowa":{
                 WordWarII wordWarII = new WordWarII();
                 numberQuestionWordWarII++;
-                wordWarII.questions(numberQuestionWordWarII);
-                break;
+                return wordWarII.getQuestion(numberQuestionWordWarII);
             }
+            default:
+                throw new IllegalArgumentException("Unsupported question number=");
         }
+
     }
 }

@@ -1,45 +1,40 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class Programmer extends Questions {
-    private int answer;
-
-    public void questions(int numberQuestion) {
+public class Programmer {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("W języku programowania Python poprzez wyrażenie, 'def' definiuje się  jedynie: \n");
-                Log.info("1) Listy\n2) Procedury\n");
-                Log.info("3) Słowniki\n4) Mechanimzy\n");
-                answer = 2;
-                break;
+                List<String> answers = Arrays.asList("Listy", "Procedury", "Słowniki", "Mechanimzy");
+                return new Question("W języku programowania Python poprzez wyrażenie, 'def' definiuje się  jedynie: ",
+                        answers,
+                        2);
             }
             case 2: {
-                Log.info("Czym jest <iostream> w jezyku programowania w C++?\n");
-                Log.info("1) Zakończenie funkcji głównej\n2) Biblioteka strumieni wejścia i wyjścia \n3) Zmienna \n4) Funkcja główna  \n");
-                answer = 2;
-                break;
+                List<String> answers = Arrays.asList("Zakończenie funkcji głównej", "Biblioteka strumieni wejścia i wyjścia ", "Zmienna", "Funkcja główna");
+                return new Question("Czym jest <iostream> w jezyku programowania w C++?",
+                        answers,
+                        2);
             }
 
             case 3: {
-                Log.info("Zbiór reguł komunikacji między programami nazwiemy?\n");
-                Log.info("1) USO\n2) OS \n3) API \n4) ISSSO \n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("USO", "OS ", "API ", "ISSSO");
+                return new Question("Zbiór reguł komunikacji między programami nazwiemy?",
+                        answers,
+                        3);
             }
 
             case 4: {
-                Log.info("Jaka jest najnowsza dystybucja systemu Linux Ubuntu?\n");
-                Log.info("1) 18.05\n2) 17.05 \n3) 18.06 \n4) 17.11 \n");
-                answer = 1;
-                break;
+                List<String> answers = Arrays.asList("18.05", "17.05", "18.06", "17.11");
+                return new Question("Jaka jest najnowsza dystybucja systemu Linux Ubuntu?",
+                        answers,
+                        1);
             }
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
         }
     }
-
-    public int getAnswer() {
-        return answer;
-    }
-
 }
 

@@ -1,44 +1,40 @@
 package com.company.Questions;
 
-import com.company.Log;
+import java.util.Arrays;
+import java.util.List;
 
-public class Surprise extends Questions {
-    private int answer;
+public class Surprise {
 
-    public void questions(int numberQuestion) {
+    public Question getQuestion(int numberQuestion) {
         switch (numberQuestion) {
             case 1: {
-                Log.info("Kto wcielił się w rolę Hansa Klossa w serialu \" Stawka większa niż życie \" ? \n");
-                Log.info("1) Tadeusz Fijewski\n2) Marian Kociniak\n3) Stanisław Mikulski\n4) Emil Karewicz\n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("Tadeusz Fijewski", "Marian Kociniak", "Stanisław Mikulski", "Emil Karewicz");
+                return new Question("Kto wcielił się w rolę Hansa Klossa w serialu \" Stawka większa niż życie \" ? ",
+                        answers,
+                        3);
             }
             case 2: {
-                Log.info("Na którym roku w Hogwarcie zdaje sie SUM-y?\n");
-                Log.info("1) Piątym\n2) Siódmym\n3) Czwartym\n4) Trzecim \n");
-                answer = 1;
-                break;
+                List<String> answers = Arrays.asList("Piątym", "Siódmym", "Czwartym", "Trzecim ");
+                return new Question("Na którym roku w Hogwarcie zdaje sie SUM-y?",
+                        answers,
+                        1);
             }
 
             case 3: {
-                Log.info("Jak miał na imię ojciec Jacka w serialu 'Tygrysy Europy'?\n");
-                Log.info("1) Ignacy\n2) Jan\n3) Jerzy\n4) Henryk\n");
-                answer = 4;
-                break;
+                List<String> answers = Arrays.asList("Ignacy", "Jan", "Jerzy", "Henryk");
+                return new Question("Jak miał na imię ojciec Jacka w serialu 'Tygrysy Europy'?",
+                        answers,
+                        4);
             }
 
             case 4: {
-                Log.info("Kto wciela sie w role Zuzy w 'Na Wspólnej'?\n");
-                Log.info("1) Małgorzata Foremniak\n2) Małgorzata Pieczyńska\n3) Małgorzata Socha\n4) Małgorzata Kożuchowska \n");
-                answer = 3;
-                break;
+                List<String> answers = Arrays.asList("Małgorzata Foremniak", "Małgorzata Pieczyńska", "Małgorzata Socha", "Małgorzata Kożuchowska ");
+                return new Question("Kto wciela sie w role Zuzy w 'Na Wspólnej'?",
+                        answers,
+                        3);
             }
-
+            default:
+                throw new IllegalArgumentException("Unsupported question number=" + numberQuestion);
         }
     }
-
-    public int getAnswer() {
-        return answer;
-    }
-
 }
