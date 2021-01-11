@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.LifeLines.UseLifeLine;
+import com.company.LifeLines.LifeLineFunction;
 import com.company.Questions.Question;
 
 public class Game {
@@ -10,12 +10,12 @@ public class Game {
         this.username = username;
     }
 
-    FunctionGame functionGame = new FunctionGame();
-    UseLifeLine useLifeLine = new UseLifeLine();
+    GameFunction gameFunction = new GameFunction();
+    LifeLineFunction lifeLineFunction = new LifeLineFunction();
 
     public void startGame() {
         Log.info("Witaj " + this.username + "!!!");
-        functionGame.displayGameRules();
+        gameFunction.displayGameRules();
         int round = 0;
         boolean hasLost = false;
 
@@ -26,32 +26,32 @@ public class Game {
         }
 
         if (!hasLost) {
-            functionGame.winning();
+            gameFunction.winning();
         }
     }
 
     public boolean playSingleRound(int round) {
-        functionGame.displayCategoryChoice();
-        String chosenCategory = functionGame.askForCategory();
-        Question generatedQuestion = functionGame.getNextQuestion(chosenCategory);
-        functionGame.displayQuestion(generatedQuestion);
+        gameFunction.displayCategoryChoice();
+        String chosenCategory = gameFunction.askForCategory();
+        Question generatedQuestion = gameFunction.getNextQuestion(chosenCategory);
+        gameFunction.displayQuestion(generatedQuestion);
         Log.info("5) Użyj koła ratunkowego (jeśli jest aktywne)");
         Log.info("9) Zakończ grę");
         Log.info("Wybierz odpowiedź: ");
-        int userAnswer = functionGame.getUserAnswerForQuestion();
+        int userAnswer = gameFunction.getUserAnswerForQuestion();
         if (userAnswer == 5) {
-            useLifeLine.lifelineChoice(generatedQuestion);
+            lifeLineFunction.lifelineChoice(generatedQuestion);
             Log.info("Wybierz odpowiedź: ");
-            userAnswer = functionGame.getUserAnswerForQuestion();
+            userAnswer = gameFunction.getUserAnswerForQuestion();
         }
         if (userAnswer == 9) {
-            functionGame.giveUp();
+            gameFunction.giveUp();
             return false;
         } else if (generatedQuestion.getRightAnswer() == userAnswer) {
-            functionGame.rightAnswer();
+            gameFunction.rightAnswer();
             return true;
         } else {
-            functionGame.wrongAnswer();
+            gameFunction.wrongAnswer();
             return false;
         }
     }
