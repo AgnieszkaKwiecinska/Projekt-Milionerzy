@@ -8,7 +8,9 @@ public class Army {
         switch (numberQuestion) {
             case 1: {
                 List<String> answers = Arrays.asList("Sudajewa", "Szpagina", "Johna Browninga", "D.Saive'a");
-                return new Question("Browning Hi-Power został skonstruowany przez:", answers, 4);
+                return new Question("Browning Hi-Power został skonstruowany przez:",
+                        answers,
+                        4);
             }
             case 2: {
                 List<String> answers = Arrays.asList("Żołnierza", "Trzaskiem", "Stopu metali", "Trzymaka i komory zupnej");

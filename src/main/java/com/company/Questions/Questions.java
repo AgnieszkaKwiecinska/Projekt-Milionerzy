@@ -14,7 +14,8 @@ public class Questions {
         Random random = new Random();
         return name[random.nextInt(16)];
     }
-    public int getRandomQuestion(){
+
+    public int getRandomQuestion() {
         Random rand = new Random();
         return rand.nextInt(4) + 1;
     }
@@ -39,7 +40,7 @@ public class Questions {
             case "Trudne Słowa": {
                 HardWord hardWord = new HardWord();
                 numberQuestion = getRandomQuestion();
-               return hardWord.getQuestion(numberQuestion);
+                return hardWord.getQuestion(numberQuestion);
             }
             case "League of Legends": {
                 LeagueOfLegends leagueOfLegends = new LeagueOfLegends();
@@ -56,47 +57,47 @@ public class Questions {
                 numberQuestion = getRandomQuestion();
                 return programmer.getQuestion(numberQuestion);
             }
-            case "Przysłowia":{
+            case "Przysłowia": {
                 Proverb proverb = new Proverb();
                 numberQuestion = getRandomQuestion();
                 return proverb.getQuestion(numberQuestion);
             }
-            case "Slang":{
+            case "Slang": {
                 Slang slang = new Slang();
                 numberQuestion = getRandomQuestion();
                 return slang.getQuestion(numberQuestion);
             }
-            case "Star Wars":{
+            case "Star Wars": {
                 StarWars starWars = new StarWars();
                 numberQuestion = getRandomQuestion();
                 return starWars.getQuestion(numberQuestion);
             }
-            case "Niespodzianka":{
+            case "Niespodzianka": {
                 Surprise surprise = new Surprise();
                 numberQuestion = getRandomQuestion();
                 return surprise.getQuestion(numberQuestion);
             }
-            case "Wiedźmin":{
+            case "Wiedźmin": {
                 TheWitcher theWitcher = new TheWitcher();
                 numberQuestion = getRandomQuestion();
                 return theWitcher.getQuestion(numberQuestion);
             }
-            case "Historia Wikingów":{
+            case "Historia Wikingów": {
                 VikingHistory vikingHistory = new VikingHistory();
                 numberQuestion = getRandomQuestion();
                 return vikingHistory.getQuestion(numberQuestion);
             }
-            case "Bronie":{
+            case "Bronie": {
                 Weapons weapons = new Weapons();
                 numberQuestion = getRandomQuestion();
                 return weapons.getQuestion(numberQuestion);
             }
-            case "I Wojna Światowa":{
+            case "I Wojna Światowa": {
                 WordWarI wordWarI = new WordWarI();
                 numberQuestion = getRandomQuestion();
                 return wordWarI.getQuestion(numberQuestion);
             }
-            case "II Wojna Światowa":{
+            case "II Wojna Światowa": {
                 WordWarII wordWarII = new WordWarII();
                 numberQuestion = getRandomQuestion();
                 return wordWarII.getQuestion(numberQuestion);
