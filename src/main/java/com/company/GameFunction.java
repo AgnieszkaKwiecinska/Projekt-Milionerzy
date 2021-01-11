@@ -40,12 +40,11 @@ public class GameFunction {
     }
 
     public void wrongAnswer() {
-        Log.info("Zła odpowiedz. Koniec gry, wygrałeś: " + prize.getTotalPrize());
+        Log.info("Zła odpowiedź. Koniec gry, wygrałeś: " + prize.getTotalPrize());
     }
 
     public void giveUp() {
         Log.info("Szkoda że odchodzisz, wygrałeś: " + prize.getTotalPrize());
-
     }
 
     public void winning() {
