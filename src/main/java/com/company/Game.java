@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.LifeLines.Lifebuoys;
+import com.company.LifeLines.UseLifeLine;
 import com.company.Questions.Question;
 
 public class Game {
@@ -11,9 +11,10 @@ public class Game {
     }
 
     FunctionGame functionGame = new FunctionGame();
-    Lifebuoys useLifeLine = new Lifebuoys();
+    UseLifeLine useLifeLine = new UseLifeLine();
 
     public void startGame() {
+        Log.info("Witaj " + this.username + "!!!");
         functionGame.displayGameRules();
         int round = 0;
         boolean hasLost = false;
@@ -35,6 +36,7 @@ public class Game {
         Question generatedQuestion = functionGame.getNextQuestion(chosenCategory);
         functionGame.displayQuestion(generatedQuestion);
         Log.info("5) Użyj koła ratunkowego (jeśli jest aktywne)");
+        Log.info("9) Zakończ grę");
         Log.info("Wybierz odpowiedź: ");
         int userAnswer = functionGame.getUserAnswerForQuestion();
         if (userAnswer == 5) {

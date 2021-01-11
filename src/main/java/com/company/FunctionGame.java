@@ -74,9 +74,9 @@ public class FunctionGame {
     }
 
     public int getUserAnswerForQuestion() {
-        int answerToQestion;
-        answerToQestion = scanner.nextInt();
-        return answerToQestion;
+        int answerToQuestion;
+        answerToQuestion = scanner.nextInt();
+        return answerToQuestion;
     }
 
     public void displayGameRules() {

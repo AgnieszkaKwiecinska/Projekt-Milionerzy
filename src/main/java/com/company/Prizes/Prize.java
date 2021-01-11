@@ -41,7 +41,7 @@ public class Prize {
 
     public void chooseBox() {
         do {
-            Log.info("Choose box: ");
+            Log.info("Wybierz skrzynię [1-10]: ");
             NumberOfBox = scanner.nextInt();
         } while (NumberOfBox < 0 || NumberOfBox > 10 || checkIfUsedThisBox() == true);
     }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lifebuoys {
+public class UseLifeLine {
     Scanner scanner = new Scanner(System.in);
     Audience audience = new Audience();
     CallToFriend callToFriend = new CallToFriend();
