@@ -7,7 +7,7 @@ import com.company.Questions.Questions;
 
 import java.util.Scanner;
 
-public class FunctionGame {
+public class GameFunction {
     Scanner scanner = new Scanner(System.in);
     Questions questions = new Questions();
     Prize prize = new Prize();
