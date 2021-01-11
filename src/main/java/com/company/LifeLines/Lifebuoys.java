@@ -83,7 +83,7 @@ public class Lifebuoys {
 
     public void useCallToFriend(Question generatedQuestion) {
         Log.info(generatedQuestion.getContent());
-        int friendChoice = rand.nextInt(5) + 1;
+        int friendChoice = rand.nextInt(4) + 1;
         for (int i = 0; i < generatedQuestion.getAnswers().size(); i++) {
             int questionNumber = i + 1;
             String answerContent = generatedQuestion.getAnswers().get(i);
